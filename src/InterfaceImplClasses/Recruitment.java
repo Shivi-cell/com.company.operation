@@ -1,5 +1,7 @@
 package InterfaceImplClasses;
 
+import java.util.HashMap;
+
 public class Recruitment {
     private String empName;
     private int empId;
@@ -8,6 +10,8 @@ public class Recruitment {
     private String empCompanyName;
     private int leave_can_take;
     private String empBankName;
+
+    private HashMap<String,Double> salaryMap;
 
     public String getAccountNo() {
         return accountNo;
@@ -58,6 +62,12 @@ public class Recruitment {
         this.leave_can_take = leave_can_take;
     }
 
+    public Recruitment(String empName, int empId, String empCompanyName) {
+        this.empName = empName;
+        this.empId = empId;
+        this.empCompanyName = empCompanyName;
+    }
+
     public int getLeave_can_take() {
         return leave_can_take;
     }
@@ -106,6 +116,12 @@ public class Recruitment {
         this.empCompanyName = empCompanyName;
     }
 
+    public HashMap<String, Double> getSalaryMap() {
+        return salaryMap;
+    }
+    public void setSalaryMap(HashMap<String, Double> salaryMap) {
+        this.salaryMap = salaryMap;
+    }
     @Override
     public String toString() {
         return "Recruitment{" +

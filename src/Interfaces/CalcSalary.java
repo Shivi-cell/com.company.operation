@@ -4,7 +4,7 @@ import InterfaceImplClasses.Employee;
 
 public interface CalcSalary {
     double calSalary(double salary);
-    double salaryAfterLeave();
+    int salaryAfterLeave();
     void salaryByMonth();
     void printPaySlip();
 }

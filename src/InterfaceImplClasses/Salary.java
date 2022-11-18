@@ -1,6 +1,8 @@
 package InterfaceImplClasses;
 
-public class CalcSalary {
+import java.util.HashMap;
+
+public class Salary {
     private int noOfDays;
     private double salary;
     private double grossSalary;
@@ -57,7 +59,7 @@ public class CalcSalary {
         this.salary = salary;
     }
 
-    public CalcSalary() {
+    public Salary() {
     }
 
 }

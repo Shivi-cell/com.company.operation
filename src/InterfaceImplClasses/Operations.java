@@ -4,11 +4,12 @@ public abstract class Operations {
     public abstract void calculateSalary(int empId);
     public abstract Employee empDetails(int empId);
     public abstract Recruitment about(Recruitment recruitment);
-
     public abstract boolean applyLeave(int id);
+    public abstract void getMonthWiseSalary(int id);
+    public abstract void calcSalaryAfterLeave(int id);
     public void printPaySlip(Recruitment recruitment)
     {
-        CalcSalary calcSalary = new CalcSalary();
+        Salary calcSalary = new Salary();
         Leave leave = new Leave();
         Service service = new Service(calcSalary);
         double salary = service.calSalary(recruitment.getEmpSalary());

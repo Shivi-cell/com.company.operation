@@ -1,11 +1,15 @@
 package InterfaceImplClasses;
+import java.util.HashMap;
+import java.util.Objects;
 
 public class Employee {
-    private int empId ;
+    private int empId;
     private String empName;
     private String empCompanyName;
-    Leave leave;
-    CalcSalary calcSalary;
+
+    private HashMap<String,Double> salaryMap;
+    private Leave leave;
+    private Salary salary;
 
     public int getEmpId() {
         return empId;
@@ -39,12 +43,28 @@ public class Employee {
         this.leave = leave;
     }
 
-    public CalcSalary getCalcSalary() {
-        return calcSalary;
+    public Salary getCalcSalary() {
+        return salary;
     }
 
-    public void setCalcSalary(CalcSalary calcSalary) {
-        this.calcSalary = calcSalary;
+    public void setCalcSalary(Salary calcSalary) {
+        this.salary = calcSalary;
+    }
+
+    public HashMap<String, Double> getSalaryMap() {
+        return salaryMap;
+    }
+
+    public void setSalaryMap(HashMap<String, Double> salaryMap) {
+        this.salaryMap = salaryMap;
+    }
+
+    public Salary getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Salary salary) {
+        this.salary = salary;
     }
 
     public Employee() {
@@ -53,16 +73,31 @@ public class Employee {
     public Employee(Recruitment recruitment) {
         this.empId=recruitment.getEmpId();
         this.empName=recruitment.getEmpName();
-        calcSalary = new CalcSalary();
-        this.calcSalary.setSalary(recruitment.getEmpSalary());
+        salary = new Salary();
+        this.salary.setSalary(recruitment.getEmpSalary());
         leave = new Leave();
         this.leave.setTotalLeave(recruitment.getLeave_can_take());
         this.setEmpCompanyName(recruitment.getEmpCompanyName());
+        /*this.setSalaryMap(new HashMap<>(){{
+            Month month = LocalDate.now().getMonth();
+            put("2022_Jan",salary.getSalary());
+        }});*/
+        this.setSalaryMap(recruitment.getSalaryMap());
     }
 
     @Override
     public String toString() {
         return "Employee{empId=" + empId +
                 ", empName='" + empName + "}";
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(empId,empName);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.empId == ((Employee) obj).empId;
     }
 }

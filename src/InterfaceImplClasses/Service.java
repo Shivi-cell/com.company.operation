@@ -2,14 +2,19 @@ package InterfaceImplClasses;
 
 public class Service implements Interfaces.CalcSalary, Interfaces.Leave {
 
-    private CalcSalary calcSalary;
+    private Salary calcSalary;
     private Leave leave;
 
-    public Service(CalcSalary calcSalary) {
+    public Service(Salary calcSalary) {
         this.calcSalary = calcSalary;
     }
 
     public Service(Leave leave) {
+        this.leave = leave;
+    }
+
+    public Service(Salary calcSalary,Leave leave) {
+        this.calcSalary = calcSalary;
         this.leave = leave;
     }
 
@@ -29,12 +34,12 @@ public class Service implements Interfaces.CalcSalary, Interfaces.Leave {
     }
 
     @Override
-    public double salaryAfterLeave() {
-        double amountDeducted, grossSalary;
-        amountDeducted= calcSalary.getSalary()-(leave.getLeaveApplied()*(calcSalary.getSalary()/30));
-        grossSalary = calcSalary.getSalary()-amountDeducted;
-        calcSalary.setGrossSalary(grossSalary);
-        return grossSalary;
+    public int salaryAfterLeave() {
+        double deduct, deductedAmount;
+        deduct= calcSalary.getSalary()-(leave.getLeaveApplied()*(calcSalary.getSalary()/30));
+        deductedAmount = calcSalary.getSalary()-deduct;
+        calcSalary.setGrossSalary(calcSalary.getSalary()-deductedAmount);
+        return (int)deductedAmount;
     }
 
     @Override
@@ -60,7 +65,7 @@ public class Service implements Interfaces.CalcSalary, Interfaces.Leave {
 
                     System.out.println("Leave applied : "+leave.getLeaveApplied());
                     System.out.println("Remaining leaves: "+leave.getRemainingLeave());
-                    System.out.println("Total leaves : "+employee.leave.getTotalLeave());
+                    System.out.println("Total leaves : "+employee.getLeave().getTotalLeave());
                     return true;
                 }
                 else
@@ -87,7 +92,7 @@ public class Service implements Interfaces.CalcSalary, Interfaces.Leave {
 
                     System.out.println("Leave applied : "+leave.getLeaveApplied());
                     System.out.println("Remaining leaves: "+leave.getRemainingLeave());
-                    System.out.println("Total leaves : "+employee.leave.getTotalLeave());
+                    System.out.println("Total leaves : "+employee.getLeave().getTotalLeave());
                     return true;
                 }
                 else
