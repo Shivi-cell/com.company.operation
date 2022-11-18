@@ -38,6 +38,9 @@ public class Main2 {
                 if (!collect.isEmpty())
                 {
                     System.out.println("employee id already exists");
+                    recruitmentList.stream().forEach(s-> System.out.print(s.getEmpId()+", "));
+                    System.out.println("\nEnter employee id differ from the above list ");
+                    System.out.println("");
                 }
                 else {
                     System.out.println("Enter employee name ");
