@@ -10,6 +10,9 @@ public class Recruitment {
     private String empCompanyName;
     private int leave_can_take;
     private String empBankName;
+    private String accountNo;
+    private String PAN;
+    private String PF_NO;
 
     private HashMap<String,Double> salaryMap;
 
@@ -36,10 +39,6 @@ public class Recruitment {
     public void setPF_NO(String PF_NO) {
         this.PF_NO = PF_NO;
     }
-
-    private String accountNo;
-    private String PAN;
-    private String PF_NO;
 
     public String getEmpBankName() {
         return empBankName;

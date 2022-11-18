@@ -39,8 +39,6 @@ public class Main2 {
                 {
                     System.out.println("employee id already exists");
                     recruitmentList.stream().forEach(s-> System.out.print(s.getEmpId()+", "));
-                    System.out.println("\nEnter employee id differ from the above list ");
-                    System.out.println("");
                 }
                 else {
                     System.out.println("Enter employee name ");
@@ -81,9 +79,32 @@ public class Main2 {
                         if (present) {
                             Recruitment recruitment = first.get();
                             HCL hcl1 = new HCL(recruitment);
+                            boolean loop2 = true;
+                            int ch1;
+                            while (loop2)
+                            {
+                                System.out.println("Enter 1 to view the employee details.");
+                                System.out.println("Enter 2 to calculate salary.");
+                                System.out.println("Enter 3 to to apply leave.");
+                                System.out.println("Enter 4 to print pay slip.");
+                                System.out.println("Enter 5 to calculate salary after leave.");
+                                ch1 = sc.nextInt();
+                                switch (ch1)
+                                {
+                                    case 1:
+                                    case 2:
+                                    case 3:
+                                    case 4:
+                                    case 5:
+                                    default:{
+                                        System.out.println("wrong input..");
+                                        loop2 = false;
+                                        break;
+                                    }
+                                }
+                            }
                             hcl1.calculateSalary(recruitment.getEmpId()); sc.nextLine();
                             System.out.println(hcl1.empDetails(recruitment.getEmpId())); sc.nextLine();
-                            System.out.println(hcl1.about(recruitment)); sc.nextLine();
                             hcl1.printPaySlip(recruitment); sc.nextLine();
                             hcl1.applyLeave(emp);
                             hcl1.calcSalaryAfterLeave(emp);
@@ -96,6 +117,30 @@ public class Main2 {
                         if (present) {
                             Recruitment recruitment = first.get();
                             Samsung samsung1 = new Samsung(recruitment);
+                            boolean loop2 = true;
+                            int ch1;
+                            while (loop2)
+                            {
+                                System.out.println("Enter 1 to view the employee details.");
+                                System.out.println("Enter 2 to calculate salary.");
+                                System.out.println("Enter 3 to to apply leave.");
+                                System.out.println("Enter 4 to print pay slip.");
+                                System.out.println("Enter 5 to calculate salary after leave.");
+                                ch1 = sc.nextInt();
+                                switch (ch1)
+                                {
+                                    case 1:
+                                    case 2:
+                                    case 3:
+                                    case 4:
+                                    case 5:
+                                    default:{
+                                        System.out.println("wrong input..");
+                                        loop2 = false;
+                                        break;
+                                    }
+                                }
+                            }
                             samsung1.calculateSalary(recruitment.getEmpId()); sc.nextLine();
                             System.out.println(samsung1.empDetails(recruitment.getEmpId())); sc.nextLine();
                             System.out.println(samsung1.about(recruitment)); sc.nextLine();
