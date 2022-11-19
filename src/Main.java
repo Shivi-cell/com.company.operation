@@ -25,7 +25,7 @@ public class Main {
            //Employee employee=new Employee(recruitment);
             HCL hcl = new HCL(recruitment);
             hcl.calculateSalary(recruitment.getEmpId());
-            System.out.println(hcl.empDetails(recruitment.getEmpId()));
+            //System.out.println(hcl.empDetails(recruitment.getEmpId()));
             System.out.println(hcl.about(recruitment));
             hcl.printPaySlip(recruitment);
             hcl.applyLeave(empId);
@@ -35,7 +35,7 @@ public class Main {
             //Employee employee=new Employee(recruitment);
             Samsung samsung = new Samsung(recruitment);
             samsung.calculateSalary(recruitment.getEmpId());
-            System.out.println(samsung.empDetails(recruitment.getEmpId()));
+            //System.out.println(samsung.empDetails(recruitment.getEmpId()));
             System.out.println(samsung.about(recruitment));
             samsung.applyLeave(empId);
         }

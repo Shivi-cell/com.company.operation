@@ -2,7 +2,7 @@ package InterfaceImplClasses;
 
 public abstract class Operations {
     public abstract void calculateSalary(int empId);
-    public abstract Employee empDetails(int empId);
+    public abstract void empDetails(int empId);
     public abstract Recruitment about(Recruitment recruitment);
     public abstract boolean applyLeave(int id);
     public abstract void getMonthWiseSalary(int id);

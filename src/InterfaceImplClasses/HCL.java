@@ -14,25 +14,29 @@ public class HCL extends Operations{
     @Override
     public void calculateSalary(int id) {
         Employee employee1 = empMap.get(id);
-        System.out.println(employee1);
         Salary calcSalary = new Salary();
        // LeaveImpl leave = new LeaveImpl();
         Service service = new Service(calcSalary);
         double salary = empMap.get(id).getSalary().getSalary();
         double gross_sal = service.calSalary(salary);
-        System.out.println("----------------------------");
-        System.out.println("Calculating salary...");
+        System.out.println("----------------------------------------------------");
         System.out.println("Employee total salary is "+salary);
         System.out.println("Employee gross salary is "+gross_sal);
         System.out.println("DA = "+calcSalary.getDa());
         System.out.println("HRA = "+calcSalary.getHra());
-        System.out.println("----------------------------");
+        System.out.println("PF = "+calcSalary.getPf());
+        System.out.println("----------------------------------------------------");
     }
 
     @Override
-    public Employee empDetails(int id) {
+    public void empDetails(int id) {
         Employee employee1 = empMap.get(id);
-        return employee1;
+        System.out.println("----------------------------------------------------");
+        System.out.println("Employee id : "+employee1.getEmpId());
+        System.out.println("Employee name : "+employee1.getEmpName());
+        System.out.println("Employee phone no : "+employee1.getEmpPhoneNo());
+        System.out.println("Employee company name : "+employee1.getEmpCompanyName());
+        System.out.println("----------------------------------------------------");
     }
 
     @Override
@@ -46,10 +50,12 @@ public class HCL extends Operations{
         Leave leave = employee.getLeave();
         leave.setRemainingLeave(employee.getLeave().getTotalLeave());
         Service service = new Service(leave);
+        System.out.println("----------------------------------------------------");
         System.out.println("Applying for leave ...");
         System.out.println("Enter no of days : ");
         int noOfDays = new Scanner(System.in).nextInt();
         boolean result = service.applyLeave(employee,noOfDays);
+        System.out.println("----------------------------------------------------");
         return result;
     }
 

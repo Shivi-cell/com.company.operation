@@ -25,9 +25,11 @@ public class Main2 {
         while (loop)
         {
             int no;
+            System.out.println("----------------------------------------------------");
             System.out.println("Enter 1 to add new Employee. ");
             System.out.println("Enter 2 to access all employees. ");
             System.out.println("Enter 3 to exit. ");
+            System.out.println("----------------------------------------------------");
             no = sc.nextInt();
             if (no == 1) {
                 System.out.println("----------------------------------------------------");
@@ -83,19 +85,36 @@ public class Main2 {
                             int ch1;
                             while (loop2)
                             {
+                                System.out.println("----------------------------------------------------");
                                 System.out.println("Enter 1 to view the employee details.");
                                 System.out.println("Enter 2 to calculate salary.");
                                 System.out.println("Enter 3 to to apply leave.");
                                 System.out.println("Enter 4 to print pay slip.");
                                 System.out.println("Enter 5 to calculate salary after leave.");
+                                System.out.println("Enter 6 to go back..");
+                                System.out.println("----------------------------------------------------");
                                 ch1 = sc.nextInt();
                                 switch (ch1)
                                 {
                                     case 1:
+                                        hcl1.empDetails(recruitment.getEmpId());
+                                        break;
                                     case 2:
+                                        hcl1.calculateSalary(recruitment.getEmpId());
+                                        break;
                                     case 3:
+                                        hcl1.applyLeave(emp);
+                                        break;
                                     case 4:
+                                        hcl1.printPaySlip(recruitment);
+                                        break;
                                     case 5:
+                                        hcl1.calcSalaryAfterLeave(emp);
+                                        break;
+                                    case 6:
+                                        System.out.println("Redirecting to previous options..");
+                                        loop2 = false;
+                                        break;
                                     default:{
                                         System.out.println("wrong input..");
                                         loop2 = false;
@@ -103,12 +122,7 @@ public class Main2 {
                                     }
                                 }
                             }
-                            hcl1.calculateSalary(recruitment.getEmpId()); sc.nextLine();
-                            System.out.println(hcl1.empDetails(recruitment.getEmpId())); sc.nextLine();
-                            hcl1.printPaySlip(recruitment); sc.nextLine();
-                            hcl1.applyLeave(emp);
-                            hcl1.calcSalaryAfterLeave(emp);
-                            hcl1.getMonthWiseSalary(emp);
+                            //hcl1.getMonthWiseSalary(emp);
                         }
                     }
                     else if (samsung) {
@@ -121,19 +135,36 @@ public class Main2 {
                             int ch1;
                             while (loop2)
                             {
+                                System.out.println("----------------------------------------------------");
                                 System.out.println("Enter 1 to view the employee details.");
                                 System.out.println("Enter 2 to calculate salary.");
                                 System.out.println("Enter 3 to to apply leave.");
                                 System.out.println("Enter 4 to print pay slip.");
                                 System.out.println("Enter 5 to calculate salary after leave.");
+                                System.out.println("Enter 6 to go back..");
+                                System.out.println("----------------------------------------------------");
                                 ch1 = sc.nextInt();
                                 switch (ch1)
                                 {
                                     case 1:
+                                        samsung1.empDetails(recruitment.getEmpId());
+                                        break;
                                     case 2:
+                                        samsung1.calculateSalary(recruitment.getEmpId());
+                                        break;
                                     case 3:
+                                        samsung1.applyLeave(emp);
+                                        break;
                                     case 4:
+                                        samsung1.printPaySlip(recruitment);
+                                        break;
                                     case 5:
+                                        samsung1.calcSalaryAfterLeave(emp);
+                                        break;
+                                    case 6:
+                                        System.out.println("Redirecting to previous options..");
+                                        loop2 = false;
+                                        break;
                                     default:{
                                         System.out.println("wrong input..");
                                         loop2 = false;
@@ -141,18 +172,13 @@ public class Main2 {
                                     }
                                 }
                             }
-                            samsung1.calculateSalary(recruitment.getEmpId()); sc.nextLine();
-                            System.out.println(samsung1.empDetails(recruitment.getEmpId())); sc.nextLine();
-                            System.out.println(samsung1.about(recruitment)); sc.nextLine();
-                            samsung1.printPaySlip(recruitment); sc.nextLine();
-                            samsung1.applyLeave(emp);
-                            samsung1.getMonthWiseSalary(emp);
+                            //samsung1.getMonthWiseSalary(emp);
                         }
                     }
                 }
                 else {
                     System.out.println("employee record not found");
-                        giveException();
+                    giveException();
                 }
             }
             else if (no==3) {

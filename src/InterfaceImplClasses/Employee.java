@@ -6,7 +6,7 @@ public class Employee {
     private int empId;
     private String empName;
     private String empCompanyName;
-
+    private String empPhoneNo;
     private HashMap<String,Double> salaryMap;
     private Leave leave;
     private Salary salary;
@@ -67,6 +67,14 @@ public class Employee {
         this.salary = salary;
     }
 
+    public String getEmpPhoneNo() {
+        return empPhoneNo;
+    }
+
+    public void setEmpPhoneNo(String empPhoneNo) {
+        this.empPhoneNo = empPhoneNo;
+    }
+
     public Employee() {
     }
 
@@ -78,10 +86,7 @@ public class Employee {
         leave = new Leave();
         this.leave.setTotalLeave(recruitment.getLeave_can_take());
         this.setEmpCompanyName(recruitment.getEmpCompanyName());
-        /*this.setSalaryMap(new HashMap<>(){{
-            Month month = LocalDate.now().getMonth();
-            put("2022_Jan",salary.getSalary());
-        }});*/
+        this.setEmpPhoneNo(recruitment.getEmpPhoneNo());
         this.setSalaryMap(recruitment.getSalaryMap());
     }
 
