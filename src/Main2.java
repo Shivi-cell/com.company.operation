@@ -13,7 +13,7 @@ public class Main2 {
     {
         throw new MyException("Invalid input..");
     }
-    public static void main(String[] args) throws MyException {
+    public static void main(String[] args)  {
         int empId, max_leave ;
         double empSalary;
         String empName, phoneNo, bankName, account_no, companyName, pan, pf_no;
@@ -91,7 +91,8 @@ public class Main2 {
                                 System.out.println("Enter 3 to to apply leave.");
                                 System.out.println("Enter 4 to print pay slip.");
                                 System.out.println("Enter 5 to calculate salary after leave.");
-                                System.out.println("Enter 6 to go back..");
+                                System.out.println("Enter 6 to know month wise salary.");
+                                System.out.println("Enter 7 to go back.");
                                 System.out.println("----------------------------------------------------");
                                 ch1 = sc.nextInt();
                                 switch (ch1)
@@ -112,6 +113,9 @@ public class Main2 {
                                         hcl1.calcSalaryAfterLeave(emp);
                                         break;
                                     case 6:
+                                        hcl1.getMonthWiseSalary(emp);
+                                        break;
+                                    case 7:
                                         System.out.println("Redirecting to previous options..");
                                         loop2 = false;
                                         break;
@@ -122,7 +126,6 @@ public class Main2 {
                                     }
                                 }
                             }
-                            //hcl1.getMonthWiseSalary(emp);
                         }
                     }
                     else if (samsung) {
@@ -141,7 +144,8 @@ public class Main2 {
                                 System.out.println("Enter 3 to to apply leave.");
                                 System.out.println("Enter 4 to print pay slip.");
                                 System.out.println("Enter 5 to calculate salary after leave.");
-                                System.out.println("Enter 6 to go back..");
+                                System.out.println("Enter 6 to know month wise salary.");
+                                System.out.println("Enter 7 to go back.");
                                 System.out.println("----------------------------------------------------");
                                 ch1 = sc.nextInt();
                                 switch (ch1)
@@ -162,6 +166,9 @@ public class Main2 {
                                         samsung1.calcSalaryAfterLeave(emp);
                                         break;
                                     case 6:
+                                            samsung1.getMonthWiseSalary(emp);
+                                            break;
+                                    case 7:
                                         System.out.println("Redirecting to previous options..");
                                         loop2 = false;
                                         break;
@@ -172,13 +179,16 @@ public class Main2 {
                                     }
                                 }
                             }
-                            //samsung1.getMonthWiseSalary(emp);
                         }
                     }
                 }
                 else {
-                    System.out.println("employee record not found");
-                    giveException();
+                    System.out.println("Employee record not found.");
+                    try {
+                        giveException();
+                    } catch (MyException e) {
+                        System.out.println("Redirecting to the main menu..");
+                    }
                 }
             }
             else if (no==3) {
@@ -187,10 +197,12 @@ public class Main2 {
                 break;
             }
             else {
-                loop = false;
-                System.out.println("Entered wrong input closing the application...");
-                giveException();
-                break;
+                System.out.println("Entered wrong input.");
+                try {
+                    giveException();
+                } catch (MyException e) {
+                    System.out.println("Redirecting to the main menu..");
+                }
             }
         }
 

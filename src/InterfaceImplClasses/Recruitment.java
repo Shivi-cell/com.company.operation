@@ -14,7 +14,7 @@ public class Recruitment {
     private String PAN;
     private String PF_NO;
 
-    private HashMap<String,Double> salaryMap;
+    private HashMap<String,Salary> salaryMap;
 
     public String getAccountNo() {
         return accountNo;
@@ -115,10 +115,10 @@ public class Recruitment {
         this.empCompanyName = empCompanyName;
     }
 
-    public HashMap<String, Double> getSalaryMap() {
+    public HashMap<String, Salary> getSalaryMap() {
         return salaryMap;
     }
-    public void setSalaryMap(HashMap<String, Double> salaryMap) {
+    public void setSalaryMap(HashMap<String, Salary> salaryMap) {
         this.salaryMap = salaryMap;
     }
     @Override

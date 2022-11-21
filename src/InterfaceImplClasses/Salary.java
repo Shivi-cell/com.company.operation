@@ -62,4 +62,7 @@ public class Salary {
     public Salary() {
     }
 
+    public Salary(double salary) {
+        this.salary = salary;
+    }
 }

@@ -25,7 +25,7 @@ public class Service implements Interfaces.CalcSalary, Interfaces.Leave {
         da = (salary*10)/100;
         hra = ((da+salary)*12)/100;
         pf = (salary*12)/100;
-        grossSalary = (salary+(da+hra));
+        grossSalary = (salary+(da+hra)-pf);
         calcSalary.setDa(da);
         calcSalary.setHra(hra);
         calcSalary.setPf(pf);

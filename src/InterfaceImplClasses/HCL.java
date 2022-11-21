@@ -2,7 +2,9 @@ package InterfaceImplClasses;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class HCL extends Operations{
     private Map<Integer,Employee> empMap = new HashMap<>();
@@ -15,12 +17,12 @@ public class HCL extends Operations{
     public void calculateSalary(int id) {
         Employee employee1 = empMap.get(id);
         Salary calcSalary = new Salary();
-       // LeaveImpl leave = new LeaveImpl();
         Service service = new Service(calcSalary);
-        double salary = empMap.get(id).getSalary().getSalary();
-        double gross_sal = service.calSalary(salary);
+        Optional<Double> first = employee1.getSalaryMap().values().stream().map(salary1 -> salary1.getSalary()).findFirst();
+        Double aDouble = first.get();
+        double gross_sal = service.calSalary(aDouble);
         System.out.println("----------------------------------------------------");
-        System.out.println("Employee total salary is "+salary);
+        System.out.println("Employee total salary is "+aDouble);
         System.out.println("Employee gross salary is "+gross_sal);
         System.out.println("DA = "+calcSalary.getDa());
         System.out.println("HRA = "+calcSalary.getHra());
@@ -62,9 +64,11 @@ public class HCL extends Operations{
     @Override
     public void getMonthWiseSalary(int id) {
         Employee employee = empMap.get(id);
-        HashMap<String, Double> salaryMap = employee.getSalaryMap();
+        HashMap<String, Salary> salaryMap = employee.getSalaryMap();
         System.out.println("--------------Month wise salary--------------");
-        salaryMap.entrySet().stream().forEach(System.out::println);
+        Map<String, Double> collect = salaryMap.entrySet().stream()
+                .collect(Collectors.toMap(s -> s.getKey(), sal -> sal.getValue().getSalary()));
+        collect.entrySet().stream().forEach(System.out::println);
         System.out.println("---------------------------------------------");
     }
 
@@ -72,14 +76,17 @@ public class HCL extends Operations{
     public void calcSalaryAfterLeave(int id) {
         Employee employee = empMap.get(id);
         Leave leave = employee.getLeave();
-        Salary salaryObj = employee.getSalary();
+        Optional<Salary> first = employee.getSalaryMap().values().stream().findFirst();
+        Salary salaryObj = first.get();
         Service service = new Service(salaryObj,leave);
         int deducted = service.salaryAfterLeave();
-        double salary = empMap.get(id).getSalary().getSalary();
+        Optional<Double> firstSalary = employee.getSalaryMap().values().stream().map(salary1 -> salary1.getSalary()).findFirst();
+        Double salary = firstSalary.get();
         double gross = service.calSalary(salary);
-        double pf = empMap.get(id).getSalary().getPf();
+        Optional<Double> first1 = employee.getSalaryMap().values().stream().map(salary1 -> salary1.getPf()).findFirst();
+        Double pf = first1.get();
         System.out.println("----------------------------------------------------");
-        System.out.println("salary after leave is "+(gross-deducted-pf));
+        System.out.println("salary after leave is "+(gross-deducted));
         System.out.println("----------------------------------------------------");
     }
 }

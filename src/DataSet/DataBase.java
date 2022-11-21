@@ -1,6 +1,7 @@
 package DataSet;
 
 import InterfaceImplClasses.Recruitment;
+import InterfaceImplClasses.Salary;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,88 +27,88 @@ public class DataBase {
         r1.setEmpSalary(25000);
         r1.setLeave_can_take(10);
         r1.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Jan",r1.getEmpSalary());
-            put("2022_Feb",r1.getEmpSalary());
-            put("2022_Mar",r1.getEmpSalary());
+            put("2022_Jan",new Salary(r1.getEmpSalary()));
+            put("2022_Feb",new Salary(r1.getEmpSalary()));
+            put("2022_Mar",new Salary(r1.getEmpSalary()));
         }});
 
         r2.setEmpPhoneNo("9965477574");
         r2.setEmpSalary(35000);
         r2.setLeave_can_take(10);
         r2.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Feb",r2.getEmpSalary());
-            put("2022_Mar",r2.getEmpSalary());
+            put("2022_Feb",new Salary(r2.getEmpSalary()));
+            put("2022_Mar",new Salary(r2.getEmpSalary()));
         }});
 
         r3.setEmpPhoneNo("9965477574");
         r3.setEmpSalary(20000);
         r3.setLeave_can_take(10);
         r3.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Jan",r3.getEmpSalary());
-            put("2022_Feb",r3.getEmpSalary());
-            put("2022_Mar",r3.getEmpSalary());
+            put("2022_Jan",new Salary(r3.getEmpSalary()));
+            put("2022_Feb",new Salary(r3.getEmpSalary()));
+            put("2022_Mar",new Salary(r3.getEmpSalary()));
         }});
 
         r4.setEmpPhoneNo("9965477574");
         r4.setEmpSalary(28000);
         r4.setLeave_can_take(10);
         r4.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Mar",r4.getEmpSalary());
-            put("2022_Apr",r4.getEmpSalary());
-            put("2022_May",r4.getEmpSalary());
+            put("2022_Mar",new Salary(r4.getEmpSalary()));
+            put("2022_Apr",new Salary(r4.getEmpSalary()));
+            put("2022_May",new Salary(r4.getEmpSalary()));
         }});
 
         r5.setEmpPhoneNo("9965477574");
         r5.setEmpSalary(30000);
         r5.setLeave_can_take(10);
         r5.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Jun",r5.getEmpSalary());
-            put("2022_Jul",r5.getEmpSalary());
-            put("2022_Aug",r5.getEmpSalary());
+            put("2022_Jun",new Salary(r5.getEmpSalary()));
+            put("2022_Jul",new Salary(r5.getEmpSalary()));
+            put("2022_Aug",new Salary(r5.getEmpSalary()));
         }});
 
         r6.setEmpPhoneNo("9965477574");
         r6.setEmpSalary(35000);
         r6.setLeave_can_take(15);
         r6.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Aug",r6.getEmpSalary());
-            put("2022_Sep",r6.getEmpSalary());
-            put("2022_Oct",r6.getEmpSalary());
+            put("2022_Aug",new Salary(r6.getEmpSalary()));
+            put("2022_Sep",new Salary(r6.getEmpSalary()));
+            put("2022_Oct",new Salary(r6.getEmpSalary()));
         }});
 
         r7.setEmpPhoneNo("9965477574");
         r7.setEmpSalary(42000);
         r7.setLeave_can_take(15);
         r7.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Nov",r7.getEmpSalary());
-            put("2022_Dec",r7.getEmpSalary());
+            put("2022_Nov",new Salary(r7.getEmpSalary()));
+            put("2022_Dec",new Salary(r7.getEmpSalary()));
         }});
 
         r8.setEmpPhoneNo("9965477574");
         r8.setEmpSalary(45000);
         r8.setLeave_can_take(15);
         r8.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Jan",r8.getEmpSalary());
-            put("2022_Feb",r8.getEmpSalary());
-            put("2022_Mar",r8.getEmpSalary());
-            put("2022_Apr",r8.getEmpSalary());
+            put("2022_Jan",new Salary(r8.getEmpSalary()));
+            put("2022_Feb",new Salary(r8.getEmpSalary()));
+            put("2022_Mar",new Salary(r8.getEmpSalary()));
+            put("2022_Apr",new Salary(r8.getEmpSalary()));
         }});
 
         r9.setEmpPhoneNo("9965477574");
         r9.setEmpSalary(50000);
         r9.setLeave_can_take(15);
         r9.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_Feb",r9.getEmpSalary());
-            put("2022_Mar",r9.getEmpSalary());
+            put("2022_Feb",new Salary(r9.getEmpSalary()));
+            put("2022_Mar",new Salary(r9.getEmpSalary()));
         }});
 
         r10.setEmpPhoneNo("9965477574");
         r10.setEmpSalary(55000);
         r10.setLeave_can_take(15);
         r10.setSalaryMap(new LinkedHashMap<>(){{
-            put("2022_May",r10.getEmpSalary());
-            put("2022_Jun",r10.getEmpSalary());
-            put("2022_Jul",r10.getEmpSalary());
+            put("2022_May",new Salary(r10.getEmpSalary()));
+            put("2022_Jun",new Salary(r10.getEmpSalary()));
+            put("2022_Jul",new Salary(r10.getEmpSalary()));
         }});
 
         List<Recruitment> recruitmentList = new ArrayList<>();

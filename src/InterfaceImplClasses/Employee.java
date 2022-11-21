@@ -7,10 +7,8 @@ public class Employee {
     private String empName;
     private String empCompanyName;
     private String empPhoneNo;
-    private HashMap<String,Double> salaryMap;
+    private HashMap<String,Salary> salaryMap;
     private Leave leave;
-    private Salary salary;
-
     public int getEmpId() {
         return empId;
     }
@@ -43,28 +41,12 @@ public class Employee {
         this.leave = leave;
     }
 
-    public Salary getCalcSalary() {
-        return salary;
-    }
-
-    public void setCalcSalary(Salary calcSalary) {
-        this.salary = calcSalary;
-    }
-
-    public HashMap<String, Double> getSalaryMap() {
+    public HashMap<String, Salary> getSalaryMap() {
         return salaryMap;
     }
 
-    public void setSalaryMap(HashMap<String, Double> salaryMap) {
+    public void setSalaryMap(HashMap<String, Salary> salaryMap) {
         this.salaryMap = salaryMap;
-    }
-
-    public Salary getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Salary salary) {
-        this.salary = salary;
     }
 
     public String getEmpPhoneNo() {
@@ -81,8 +63,6 @@ public class Employee {
     public Employee(Recruitment recruitment) {
         this.empId=recruitment.getEmpId();
         this.empName=recruitment.getEmpName();
-        salary = new Salary();
-        this.salary.setSalary(recruitment.getEmpSalary());
         leave = new Leave();
         this.leave.setTotalLeave(recruitment.getLeave_can_take());
         this.setEmpCompanyName(recruitment.getEmpCompanyName());
